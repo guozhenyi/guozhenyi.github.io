@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2015 | 洗雨轩</title>
+  <title>Lumen源码分析之门面模式 | 洗雨轩</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="洗雨轩">
-<meta property="og:url" content="https://guozhenyi.github.io/archives/2015/index.html">
+  <meta name="description" content="最近项目用Lumen来做接口开发，主要看重Lumen比Laravel更轻量，更适合做接口开发。 Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。 刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。">
+<meta name="keywords" content="php Lumen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lumen源码分析之门面模式">
+<meta property="og:url" content="https://guozhenyi.github.io/2017/07/facade-pattern-in-lumen-framework.html">
 <meta property="og:site_name" content="洗雨轩">
+<meta property="og:description" content="最近项目用Lumen来做接口开发，主要看重Lumen比Laravel更轻量，更适合做接口开发。 Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。 刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。">
+<meta property="og:updated_time" content="2017-07-19T12:44:41.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="洗雨轩">
+<meta name="twitter:title" content="Lumen源码分析之门面模式">
+<meta name="twitter:description" content="最近项目用Lumen来做接口开发，主要看重Lumen比Laravel更轻量，更适合做接口开发。 Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。 刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。">
   
     <link rel="alternate" href="/atom.xml" title="洗雨轩" type="application/atom+xml">
   
@@ -59,77 +64,56 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/06/how-to-unescape-unicode-with-json-on-php.html" class="archive-article-date">
-  <time datetime="2015-06-16T02:34:30.000Z" itemprop="datePublished">6月 16</time>
+        <section id="main"><article id="post-facade-pattern-in-lumen-framework" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/facade-pattern-in-lumen-framework.html" class="article-date">
+  <time datetime="2017-07-18T14:57:59.000Z" itemprop="datePublished">2017-07-18</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/how-to-unescape-unicode-with-json-on-php.html">怎样在JSON字符串中不转码Unicode字符</a>
+    <h1 class="article-title" itemprop="name">
+      Lumen源码分析之门面模式
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/06/how-to-define-js-class.html" class="archive-article-date">
-  <time datetime="2015-06-11T02:05:55.000Z" itemprop="datePublished">6月 11</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/how-to-define-js-class.html">怎样定义js类</a>
-    </h1>
-  
+        <p>最近项目用Lumen来做接口开发，主要看重Lumen比Laravel更轻量，更适合做接口开发。</p>
+<p>Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。</p>
+<p>刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/hello-blog.html" class="archive-article-date">
-  <time datetime="2015-05-23T13:30:19.000Z" itemprop="datePublished">5月 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/hello-blog.html">hello blog</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://guozhenyi.github.io/2017/07/facade-pattern-in-lumen-framework.html" data-id="cj5eop59f000208l4bj7a010o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php-Lumen/">php Lumen</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/06/how-to-unescape-unicode-with-json-on-php.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">怎样在JSON字符串中不转码Unicode字符</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
