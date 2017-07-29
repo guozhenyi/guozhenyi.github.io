@@ -9,10 +9,10 @@
 <meta name="keywords" content="php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="怎样在JSON字符串中不转码Unicode字符">
-<meta property="og:url" content="https://guozhenyi.github.io/2015/06/how-to-unescape-unicode-with-json-on-php.html">
+<meta property="og:url" content="http://www.guozhenyi.com/2015/06/how-to-unescape-unicode-with-json-on-php.html">
 <meta property="og:site_name" content="洗雨轩">
 <meta property="og:description" content="对于JSON的编码和解码已经足够方便，几乎在各种编程语言之中都已经实现。在PHP之中，有json_encode 和 json_decode 函数实现。 但是有一个问题，json_encode 在编码时，会把中文字符编码为Unicode字符。 123$arr = array(&apos;test&apos;=&amp;gt;&apos;测试&apos;);$str = json_encode($arr);echo $str; 结果： 1&amp;#123">
-<meta property="og:updated_time" content="2017-07-19T12:36:13.508Z">
+<meta property="og:updated_time" content="2017-07-22T04:43:47.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="怎样在JSON字符串中不转码Unicode字符">
 <meta name="twitter:description" content="对于JSON的编码和解码已经足够方便，几乎在各种编程语言之中都已经实现。在PHP之中，有json_encode 和 json_decode 函数实现。 但是有一个问题，json_encode 在编码时，会把中文字符编码为Unicode字符。 123$arr = array(&apos;test&apos;=&amp;gt;&apos;测试&apos;);$str = json_encode($arr);echo $str; 结果： 1&amp;#123">
@@ -58,7 +58,7 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://guozhenyi.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.guozhenyi.com"></form>
       </div>
     </div>
   </div>
@@ -118,14 +118,14 @@
 <p>解决办法四：<br>php5.4版本开始已经提供了原生的解决办法</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'test'</span>=&gt;<span class="string">'测"试'</span>.PHP_EOL.<span class="string">'换'</span>.chr(<span class="number">8</span>).<span class="string">'行'</span>.chr(<span class="number">12</span>).<span class="string">'制'</span>.chr(<span class="number">9</span>).<span class="string">'表'</span>.<span class="string">'\\ha'</span></div><div class="line">        );</div><div class="line">$str = json_encode($arr, JSON_UNESCAPED_UNICODE);</div><div class="line"><span class="keyword">echo</span> $str;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;test&quot;:&quot;测\&quot;试\r\n换\b行\f制\t表\\ha&quot;&#125;</div></pre></td></tr></table></figure>
-<p>总结分析：<br>办法一： 方便实用，但是mysql_escape_string函数在未来php版本可能被移除（后记：在php7中已经移除）<br>办法二： 比较简单，够用<br>办法三： 强迫症+深究型比较喜欢的方式，很够显比格？<br>办法四： 部署环境必须要PHP的版本在5.4及以上</p>
+<p>总结分析：<br>办法一： 方便实用，但是 mysql_escape_string 函数在未来php版本可能被移除（后记：在php7中已经移除）<br>办法二： 比较简单，够用<br>办法三： 强迫症+深究型比较喜欢的方式，很够显比格？<br>办法四： 部署环境必须要PHP的版本在5.4及以上</p>
 <p>但是客观的说，如果环境允许，选择第四种，其次二三择其一，最次选择第一种。</p>
 <p>End–</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://guozhenyi.github.io/2015/06/how-to-unescape-unicode-with-json-on-php.html" data-id="cj5eop5a6000808l4hhz8w40h" class="article-share-link">Share</a>
+      <a data-url="http://www.guozhenyi.com/2015/06/how-to-unescape-unicode-with-json-on-php.html" data-id="cj5esy2pm000140l4a7r5xnxj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -167,7 +167,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php-Lumen/">php Lumen</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lumen/">Lumen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li></ul>
     </div>
   </div>
 
@@ -177,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/php-Lumen/" style="font-size: 10px;">php Lumen</a>
+      <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/php/" style="font-size: 10px;">php</a>
     </div>
   </div>
 
