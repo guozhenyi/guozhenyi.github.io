@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://www.guozhenyi.com/2017/07/facade-pattern-in-lumen-framework.html">
 <meta property="og:site_name" content="洗雨轩">
 <meta property="og:description" content="最近项目用Lumen来做接口开发，主要看重Lumen比Laravel更轻量，更适合做接口开发。 Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。 刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。 Lumen的代码比Laravel简洁很多，砍">
-<meta property="og:updated_time" content="2017-07-29T05:15:14.159Z">
+<meta property="og:updated_time" content="2017-07-29T05:20:06.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lumen源码分析之门面模式">
 <meta name="twitter:description" content="最近项目用Lumen来做接口开发，主要看重Lumen比Laravel更轻量，更适合做接口开发。 Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。 刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。 Lumen的代码比Laravel简洁很多，砍">
@@ -90,6 +90,7 @@
 <p>Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。</p>
 <p>刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。</p>
 <p>Lumen的代码比Laravel简洁很多，砍掉了很多自定义配置，还替换了路由的包，以此来获得跟快的运行速度。</p>
+<a id="more"></a>
 <p>从入口文件开始。</p>
 <p>public/index.php</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$app = <span class="keyword">require</span> <span class="keyword">__DIR__</span>.<span class="string">'/../bootstrap/app.php'</span>;</div><div class="line"></div><div class="line">$app-&gt;run();</div></pre></td></tr></table></figure>
@@ -119,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.guozhenyi.com/2017/07/facade-pattern-in-lumen-framework.html" data-id="cj5esy2pu000340l4k4ak631o" class="article-share-link">Share</a>
+      <a data-url="http://www.guozhenyi.com/2017/07/facade-pattern-in-lumen-framework.html" data-id="cj5oum3eh0004cgl4ww5szhf1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
