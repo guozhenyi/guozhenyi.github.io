@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>袖里乾坤</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="袖里乾坤">
+<meta property="og:url" content="https://guozhenyi.github.io/index.html">
+<meta property="og:site_name" content="袖里乾坤">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="袖里乾坤">
+  
+    <link rel="alternate" href="/atom.xml" title="袖里乾坤" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">袖里乾坤</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://guozhenyi.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2017-2017-07-18-facade-pattern-in-lumen-framework" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/2017-2017-07-18-facade-pattern-in-lumen-framework.html" class="article-date">
+  <time datetime="2017-07-18T14:57:59.000Z" itemprop="datePublished">2017-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/2017-2017-07-18-facade-pattern-in-lumen-framework.html">Lumen源码分析之门面模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近项目用Lumen来做接口开发，主要看重Lumen比Laravel更轻量，更适合做接口开发。</p>
+<p>Laravel的源代码平时用的时候也经常去翻，但总有种云里雾里的感觉，主要是Laravel运用了很多设计模式，还有许多PHP的OOP特性，所以看起来略显繁复。</p>
+<p>刚好趁着应用Lumen，就以Lumen来分析一下其所用的门面模式（Facade pattern）。</p>
+<p>Lumen的代码比Laravel简洁很多，砍掉了很多自定义配置，还替换了路由的包，以此来获得跟快的运行速度。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/2017-2017-07-18-facade-pattern-in-lumen-framework.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://guozhenyi.github.io/2017/07/2017-2017-07-18-facade-pattern-in-lumen-framework.html" data-id="ckbrvdxpe0000r8l4bf89vr6z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lumen/">Lumen</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-2015-06-16-how-to-unescape-unicode-with-json-on-php" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/2015-2015-06-16-how-to-unescape-unicode-with-json-on-php.html" class="article-date">
+  <time datetime="2015-06-16T02:34:30.000Z" itemprop="datePublished">2015-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/2015-2015-06-16-how-to-unescape-unicode-with-json-on-php.html">怎样在JSON字符串中不转码Unicode字符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对于JSON的编码和解码已经足够方便，几乎在各种编程语言之中都已经实现。在PHP之中，有json_encode 和 json_decode 函数实现。</p>
+<p>但是有一个问题，json_encode 在编码时，会把中文字符编码为Unicode字符。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">array</span>(<span class="string">'test'</span>=&gt;<span class="string">'测试'</span>);</span><br><span class="line">$str = json_encode($arr);</span><br><span class="line"><span class="keyword">echo</span> $str;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"test"</span>:<span class="string">"\u6d4b\u8bd5"</span>&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2015/06/2015-2015-06-16-how-to-unescape-unicode-with-json-on-php.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://guozhenyi.github.io/2015/06/2015-2015-06-16-how-to-unescape-unicode-with-json-on-php.html" data-id="ckbrvdxpt0007r8l4z85bnhvg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-2015-06-11-how-to-define-js-class" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/2015-2015-06-11-how-to-define-js-class.html" class="article-date">
+  <time datetime="2015-06-11T02:05:55.000Z" itemprop="datePublished">2015-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/2015-2015-06-11-how-to-define-js-class.html">怎样定义js类</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要解决的问题：<br>遇到要用js解析数据，并填充网页，如果过程式的写js，会很容易导致变量冲突，而且不利于迁移和维护，但是对于js的OOP编程几乎一窍不通，不过OOP的思想总归是和其他语言相通的，经过查找资料，和自己的摸索，此文主要记录摸索过程，通过实践验证理论。</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/06/2015-2015-06-11-how-to-define-js-class.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://guozhenyi.github.io/2015/06/2015-2015-06-11-how-to-define-js-class.html" data-id="ckbrvdxpl0003r8l4f4g8gmco" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2015-2015-05-23-hello-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/2015-2015-05-23-hello-blog.html" class="article-date">
+  <time datetime="2015-05-23T13:30:19.000Z" itemprop="datePublished">2015-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/2015-2015-05-23-hello-blog.html">hello blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我也要开始写博客了，以我的方式</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>对于写博客，我定了几个标准：</p>
+<ol>
+<li>写作高效</li>
+<li>解析灵活</li>
+<li>维护方便</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2015/05/2015-2015-05-23-hello-blog.html#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://guozhenyi.github.io/2015/05/2015-2015-05-23-hello-blog.html" data-id="ckbrvdxph0001r8l497ros78q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lumen/">Lumen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Lumen/" style="font-size: 10px;">Lumen</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/php/" style="font-size: 10px;">php</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/2017-2017-07-18-facade-pattern-in-lumen-framework.html">Lumen源码分析之门面模式</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/2015-2015-06-16-how-to-unescape-unicode-with-json-on-php.html">怎样在JSON字符串中不转码Unicode字符</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/2015-2015-06-11-how-to-define-js-class.html">怎样定义js类</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/2015-2015-05-23-hello-blog.html">hello blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 guozhenyi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.1.0/dist/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
